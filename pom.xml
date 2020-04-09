@@ -58,8 +58,13 @@
           <version>2.5.2</version>
         </plugin>
         <plugin>
-          <artifactId>heroku-deploy-plugin</artifactId>
-          <version>2.8.2</version>
+          <groupId>com.heroku.sdk</groupId>
+          <artifactId>heroku-maven-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <appName>bourget-client-java</appName>
+          </configuration>
+
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
