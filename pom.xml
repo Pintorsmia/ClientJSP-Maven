@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <tomcat.version>9.0.30</tomcat.version>
+    <tomcat.version>8.5.23</tomcat.version>
   </properties>
 
   <dependencies>
@@ -99,7 +99,6 @@
           <configuration>
             <appName>bourget-client-java</appName>
           </configuration>
-
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -118,6 +117,28 @@
                   </artifactItem>
                 </artifactItems>
               </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>appassembler-maven-plugin</artifactId>
+          <version>2.0.0</version>
+          <configuration>
+            <assembleDirectory>target</assembleDirectory>
+            <programs>
+              <program>
+                <mainClass>launch.Main</mainClass>
+                <name>webapp</name>
+              </program>
+            </programs>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>assemble</goal>
+              </goals>
             </execution>
           </executions>
         </plugin>

@@ -1,22 +1,25 @@
 package com.demo;
+import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 
-@WebServlet("/ServletDemo")
+@WebServlet(
+        name = "MyServlet",
+        urlPatterns = {"/ServletDemo"}
+)
 public class ServletDemo extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<h3>Servlet Test!</h3>");
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        ServletOutputStream out = resp.getOutputStream();
+        out.write("hello heroku".getBytes());
+        out.flush();
+        out.close();
     }
 }
