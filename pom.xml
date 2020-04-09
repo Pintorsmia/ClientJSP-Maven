@@ -58,7 +58,7 @@
           <version>2.5.2</version>
         </plugin>
         <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
+          <artifactId>heroku-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
         <plugin>
