@@ -8,9 +8,19 @@
     <servlet-name>ServletDemo</servlet-name>
     <servlet-class>com.demo.ServletDemo</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ServletTrain</servlet-name>
+    <servlet-class>com.servlets.ServletTrain</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>ServletDemo</servlet-name>
     <url-pattern>/ServletDemo</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletTrain</servlet-name>
+    <url-pattern>/ServletTrain</url-pattern>
+  </servlet-mapping>
+
 </web-app>
 
