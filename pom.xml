@@ -9,8 +9,7 @@
     <packaging>war</packaging>
 
     <name>ClientJSP-Maven Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <url>https://bourget-client-java.herokuapp.com</url>
 
     <dependencies>
         <dependency>
@@ -54,6 +53,14 @@
                 <version>3.0.2</version>
                 <configuration>
                     <appName>bourget-client-java</appName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
                 </configuration>
             </plugin>
         </plugins>
